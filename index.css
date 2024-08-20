@@ -1,0 +1,121 @@
+@import url("https://font.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "sans-serif";
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    background-color: rgb(1, 1, 1); 
+    backdrop-filter: blur(5px);
+    background-size: cover;
+    background-position: center;
+    margin: 40px;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    animation: navbaranm 3s ease-in-out;
+
+    
+}
+
+.logo {
+    font-size: 32px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+}
+.navbarandro{
+    display: none;
+}
+.navbar a{
+    position: relative;
+    font-size: 18px;
+    color: #fff8f8;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navbar a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background:#fff;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.video-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Sesuaikan dengan kebutuhan */
+    height: 100%; /* Sesuaikan dengan kebutuhan */
+    object-fit: cover; /* Atur agar video menutupi seluruh area */
+    object-position: center; /* Posisikan video ke tengah */
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: 20%;
+}
+
+/* responsive header */
+@media screen and (max-width: 768px) {
+    .navbar{
+        display: none;
+    }
+    .navbarandro{
+        display: block;
+        font-size: 50px;
+        color: white;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    
+}
+/* Animasi navbar */
+
+@keyframes navbaranm {
+    0% {
+        transform: translateX(0); /* Awal animasi, posisi di kiri */
+        opacity: 0; /* Awal animasi, transparansi penuh */
+    }
+    100% {
+        margin-left: 40px;/* Akhir animasi, bergerak ke kanan 100px */
+        opacity: 1; /* Akhir animasi, sepenuhnya terlihat */
+    }
+}
